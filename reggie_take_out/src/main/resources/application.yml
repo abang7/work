@@ -1,0 +1,25 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: reggie_take_out
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+#    url: jdbc:mysql://127.0.0.1:3306/mysql?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    url: jdbc:mysql://127.0.0.1:3306/reggie?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: 2qwe2qwe
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: validate
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+  mvc:
+  http:
+    multipart:
+      max-file-size: 100MB

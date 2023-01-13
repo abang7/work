@@ -1,0 +1,42 @@
+buildscript {
+	repositories {
+		maven {
+			url 'https://maven.aliyun.com/repository/public/'
+		}
+		maven {
+			url 'https://maven.aliyun.com/repository/spring/'
+		}
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.2.RELEASE")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+
+group 'com.bang'
+version '1.0-SNAPSHOT'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation("org.springframework.boot:spring-boot-starter-web")
+	implementation("org.springframework.boot:spring-boot-starter-actuator")
+	testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
+	testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
+	testCompile("org.springframework.boot:spring-boot-starter-test")
+//    implementation('org.springframework.boot:spring-boot-starter-log4j2:1.5.7.RELEASE')
+	implementation('org.projectlombok:lombok:1.18.8')
+	implementation('com.alibaba:druid:1.1.10')
+	implementation('org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.2')
+	implementation('mysql:mysql-connector-java:8.0.13')
+	implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+	implementation('com.baomidou:mybatis-plus-boot-starter:3.5.1')
+	implementation 'org.springframework.boot:spring-boot-starter-validation:2.4.0'
+
+	implementation 'org.projectlombok:lombok:1.18.8'
+	annotationProcessor 'org.projectlombok:lombok:1.18.8'
+}
